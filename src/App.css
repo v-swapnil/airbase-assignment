@@ -1,38 +1,75 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.test-layout {
+  display: flex;
+  gap: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.user-card,
+.user-card-square {
+  border: 1px solid red;
+  padding: 24px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.user-card p {
+  line-height: 20px;
+}
+
+.user-card-square {
+  align-items: flex-start;
+}
+
+.user-card-square img {
+  width: 200px;
+  height: 100px;
+}
+
+.loading-animation {
+  background-color: #a7a3a3;
+  animation: loading-animation-keyframes 1.5s infinite;
+}
+
+.loading-animation-gradient {
+  background: linear-gradient(to right, #fafafa 8%, #f4f4f4 38%, #fafafa 54%);
+  background-size: 400% 400%;
+  animation: loading-animation-gradient-keyframes 1.5s infinite;
+}
+
+@keyframes loading-animation-keyframes {
+  0% {
+    opacity: 0.6;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes loading-animation-gradient-keyframes {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
